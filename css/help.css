@@ -1,0 +1,19 @@
+/* help file style*/
+
+#noInternet {
+    display: none;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+#noVPN {
+    display: none;
+    margin-left: 8px;
+    margin-top: 8px;
+}
+
+#noData {
+    display: none;
+    margin-left: 8px;
+    margin-top: 8px;
+}

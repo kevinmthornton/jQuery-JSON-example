@@ -1,0 +1,503 @@
+/* reset everything to 0*/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video
+{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    font-family: sans-serif;
+    margin-top: 22px;
+    /* don't want users to be able to select anything */
+    -webkit-user-select: none;
+}
+
+/* class for upper/lower left rounded corners with right side square, 12 */
+.left-rounded-corners {
+    -webkit-border-top-left-radius: 12px;
+    -webkit-border-bottom-left-radius: 12px;
+    -moz-border-radius-topleft: 12px;
+    -moz-border-radius-bottomleft: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    /* shadow */
+    box-shadow: -2px 3px 8px #888888;
+}
+
+.rounded-corners {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px; 
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* PCC blue is 263892*/
+.pccBlue {
+    background-color: #263892;
+    color: #fff;
+}
+
+.white {
+    background-color: #ffffff;
+    color:#263892;
+}
+
+.paddingFive {
+    padding: 5px;
+}
+
+.small {
+    font-size: 8px;
+}
+
+/* yellow mesage text */
+.msgText {
+    color:#ffff00;
+    font-size: 12px;
+    font-family: monospace;
+    /* margin: 5px;*/
+    padding: 5px;
+    text-align: center;
+}
+
+/* custom font face for h4 on pages; src -> link to font source file*/
+@font-face {
+    font-family: bonvenoFont;
+    src: url(BonvenoCF-Light.otf);
+}
+
+/* main container for holding centered DIV*/
+#container {
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+/* center everything in this div*/
+#centered {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background: #fff;
+    margin-top: 10px;
+}
+
+#centered h3 {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-family: bonvenoFont;
+    font-size: 20px;
+    font-weight: bold;
+    color: #263892
+}
+
+#centered h4 {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-family: bonvenoFont; /* custom loaded font from @font-face above*/
+    font-size: 16px;
+    color: #263892
+}
+
+#centered p {
+    margin-left: 10px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.callout {
+    background: #deb27a;
+    font-weight: bold;
+    
+}
+
+/* section for INDEX.HTML / login */
+
+.uniTitle {
+    font-size: 24px;
+    padding-top: 5px;    
+}
+
+#loginForm input {
+    width:80%;
+}
+#login {
+    position: relative;
+    background:#263892;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 0px;
+    margin-top: 15px;
+    padding-left:10px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#loginButton {
+    height: 30px;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+#loginButton img {
+    float:right;
+    margin-top: -10px;
+}
+
+#loginError{
+    display: none;
+}
+
+/* the spinner to show wait time*/
+
+#spinner {
+    display: none;
+    width: 120px;
+    /* height: 120px; */
+    margin: auto;
+    padding: 8px;
+    z-index: 99;
+    text-align: center;
+}
+
+#spinner img {
+    margin: auto;
+    display:block;
+}
+
+/* main section, styling for when they get into the app*/
+
+/* ul on centeredDiv for listing out what apps they can see*/
+#mainAppsList {
+    list-style: none;
+    padding: 2px;
+    margin: 15px 0px 20px 0px;
+}
+
+#mainAppsList li {
+    /*text-align: center; */
+    margin-top: 8px;
+    margin-left: 8px;
+    width:100%;
+    height: 30px;
+    padding: 15px 0px 5px 10px;
+    
+}
+
+#mainAppsList li img {
+    float:right;
+    margin-top: -10px;
+    margin-right: 20px;
+}
+
+#topNav {
+    margin: 5px 0px 2px 0px;
+    background-color:#66ccff;
+    padding-top:8px;
+    padding-left:8px;
+    display:block;
+    position: relative;
+    height:27px;
+}
+
+/* DIRECTORY.HTML styles*/
+
+header {
+    height: 120px;
+    background: #fff;
+    position: fixed;
+    top:0px;
+    width: 100%;
+    z-index: 1000;
+    padding-top: 22px;
+}
+
+#directoryContent {
+    margin: 110px auto;
+    z-index:1; 
+}
+
+/*margin: top, right, bottom, left*/
+#directoryList {
+    list-style: none;
+    padding: 2px;
+    width:100%;
+    margin: 15px 0px 8px 0px;
+}
+
+#directoryList li {
+    height: 40px;
+    /*text-align: center;*/
+    margin-top: 5px;
+    padding-left: 8px;
+    padding-top: 3px;
+}
+
+/* the a link directly underneath of the directoryList ul*/
+#directoryList > a {
+    margin-left: 8px;
+    font-size: 20px;
+    padding-left: 8px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    position: relative;
+    display: block;
+    width: 96%;
+}
+
+/* -30 because of the display:block for the span so I can get the company name underneath*/
+#directoryList > li > a > img {
+    float:right;
+    margin-top: -20px;
+    margin-right: 0px;
+    padding-right: 24px;
+}
+
+#directoryList li a span {
+    display: block;
+}
+
+ul.directoryListLetters {
+    margin-top: 2px;
+    margin-left: 5px;
+    font-size: 24px;
+    clear:both;
+}
+
+ul.directoryListLetters li a {
+    font-size: 18px;
+}
+
+ul.directoryListLetters > li > a > img {
+    float:right;
+    margin-top: -30px;
+    margin-right: 0px;
+    padding-right: 24px;
+}
+
+#directoryJumpLetters {
+ background-color: #F7FE2E;
+ width: 20px;
+ position: relative;
+ line-height: 101%;
+ margin-top: 52px;
+}
+
+#directoryJumpLetters a {
+    font-size: 16px;
+    text-decoration: none;
+    padding-left: 2px;
+    color:#000;
+}
+
+#searchForm {
+    background-color: #99ccff;
+    margin-top: 5px;
+    position:relative;
+}
+
+#searchIcon {
+    position: absolute;
+}
+
+#searchMsg {
+    display: none;
+}
+
+#showEmployee {
+    background: #fff;
+    margin:10px;
+    padding: 5px;
+    cursor: default;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.9);
+    z-index: 1001;
+}
+
+#showEmployee img {
+    float: right;
+    z-index: 2001;
+}
+
+#showEmployee h4 {
+    font-family: bonvenoFont;
+    font-size: 18px;
+    color: #263892;
+    margin-left: 0px;
+}
+
+#navDirectoryLink {
+    display: none;
+}
+
+/* for the dark background and pop up for employee info*/
+.overlayBG {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+    z-index: 1000;
+    cursor: pointer;
+    background: #000; 
+    background: rgba(0,0,0,0.75);
+}
+
+/* ECAR.HTML styles*/
+
+#navECARsLink {
+    display: none;
+}
+
+#currentCARS {
+    list-style: none;
+    margin-left: 8px;
+    margin-top: 8px;    
+}
+
+#currentCARS li {
+    margin-bottom: 5px;
+}
+
+#currentCARS li a {
+    font-size: 20px;
+}
+
+#carDetailsMainDL {
+    margin-left: 8px;
+    margin-top: 8px;
+    position: relative;
+    float: left;
+}
+
+#carDetailsMainDL dt {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#carDetailsMainDL dd {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+#carDetailsPullout {
+    margin-right: 8px;
+    margin-top: 8px;
+    position: relative;
+    float: right;
+    background-color: #ccc;
+    padding: 5px;
+}
+
+#carDetailsPullout dt {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#carDetailsPullout dd {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+#carAttachments {
+    display:none;
+    position: relative;
+    margin-left: 8px;
+    font-size: 0.8em;
+}
+
+#carAttachments h4 {
+    margin-left: 0px;
+}
+
+#carAttachmentsList {
+    display: none;
+}
+
+#carApprovers {
+    display:none;
+    position: absolute;
+    margin-left: 8px;
+    float:right;
+}
+
+#carApprovers h4 {
+    margin-left: 0px;
+}
+
+#carApproversList {
+    display: none;
+    margin-top: 5px;
+}
+
+#carApproveForm {
+    display: none;
+    margin-top: -5px;
+}
+
+#carApproveForm form {
+        margin-left: 12px;
+}
+
+#carRejectForm {
+    display: none;
+    margin-top: -5px;
+}
+
+#carRejectForm form {
+        margin-left: 12px;
+}
+
+#carForwardForm {
+    display: none;
+    margin-top: 5px;
+}
+
+#carForwardForm form {
+        margin-left: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

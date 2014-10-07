@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+        <link rel="stylesheet" type="text/css" href="index.css" />
+        <link rel="stylesheet" type="text/css" href="main.css" />
+
+        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/main.css" />-->
+
+<title>Universal App - ECON</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="centered">
+                <p class='white uniTitle center' style='font-size:.9em;'><a href="index.html"><img src='logo.png' width='80' border='0'></a> UNIVERSAL APP</p>
+                <div id="topNav">
+                    <a id="navAppsLink" class="pccBlue rounded-corners paddingFive" href="javascript:app.showApps()">&lt; Apps</a>
+                    <a id="navECONsLink" class="pccBlue rounded-corners paddingFive" href="javascript:Econ.getRecords()">ECONs</a>
+                    <a id="navSearchECONsLink" class="pccBlue rounded-corners paddingFive" href="javascript:Econ.showSearchForm()">Search ECONs</a>
+                    <a id="navECONDetailsLink" class="pccBlue rounded-corners paddingFive" href="">ECON Details</a>
+                </div>
+                
+                <div id="searchFormDiv" class="center rounded-corners">
+                    <!-- filled in from econ.js > displayECONs -->
+                    <a href='javascript:Econ.closeSearchForm()'><img src='close_icon.png' width=32 height=32 id='overlayCloseButton' /></a>
+                    <form id="searchForm">
+                        <!-- have to replace this with sent JSON data -->
+                        <table class="searchFormTable">
+    <tbody>
+      <tr>
+            <td align="right">CON ID: </td>
+            <td><input type="text" name="param_con~id_s_n_80" value=""></td>
+      </tr>
+      <tr>
+            <td align="right">Type of CON: </td>
+            <td><select name="param_con~type_s_n_40">
+                  <option value="">ANY</option>
+                        <option value="IT">IT</option>
+                        <option value="NON-IT">NON-IT</option>
+                        <option value="POD (TIMET ONLY)">POD (TIMET ONLY)</option>
+                      </select>
+            </td>
+      </tr>
+      <tr>
+        <td align="right">Division Name: </td>
+        <td>
+            <select name="param_division~name_i_n_6">
+            <option value="">ANY</option>
+                        <option value="6">Airfoils</option>
+                        <option value="5">Corporate</option>
+                        <option value="10">Disc Ops</option>
+                        <option value="1">Fasteners</option>
+                        <option value="7">Forged Products</option>
+                        <option value="8">PCC Aerostructures</option>
+                        <option value="4">SMC</option>
+                        <option value="3">Structurals</option>
+                        <option value="9">Structurals (SCO)</option>
+                        <option value="11">Timet</option>
+                        <option value="2">Wyman</option>
+                      </select>
+        </td>
+      </tr>
+      <tr>
+        <td align="right">Plant Name: </td>
+      </tr>
+      <tr>
+        <td colspan=2><select name="param_plant~name_i_n_6">
+            <option value="">ANY</option>
+                        <optgroup label="Airfoils">
+                        <option value="683">AETC</option>
+                        <option value="701">Airfoils Division HQ</option>
+                        <option value="700">Cannon-Muskegon</option>
+                        <option value="687">Ceramics</option>
+                        <option value="682">Deer Creek</option>
+                        <option value="686">Douglas</option>
+                        <option value="681">Mentor</option>
+                        <option value="688">Mexico</option>
+                        <option value="684">Minerva</option>
+                        <option value="685">SMP</option>
+                        </optgroup>
+                        <optgroup label="Corporate">
+                        <option value="727">Corporate Office</option>
+                        </optgroup>
+                        <optgroup label="Disc Ops">
+                        <option value="679">Advanced Forming Technology (AFT)</option>
+                        <option value="680">AFTE</option>
+                        <option value="733">Thailand Machining</option>
+                        </optgroup>
+                        <optgroup label="Fasteners">
+                        <option value="658">AAA Aircraft Supply LLC</option>
+                        <option value="663">Air Industries Company (AIC)</option>
+                        <option value="668">Airdrome Precision Components</option>
+                        <option value="662">AVK Industrial Products</option>
+                        <option value="664">Cherry Aerospace</option>
+                        <option value="699">Division HQ or Group</option>
+                        <option value="678">E-One</option>
+                        <option value="737">Faber</option>
+                        <option value="667">Fatigue Technology (FTI)</option>
+                        <option value="657">Greer Stop Nut</option>
+                        <option value="656">Jenkintown</option>
+                        <option value="677">JL Fiber Services</option>
+                        <option value="747">Kun Shan Tooling</option>
+                        <option value="675">Metalac</option>
+                        <option value="676">NSS</option>
+                        <option value="709">PB Fasteners</option>
+                        <option value="785">Permaswage California</option>
+                        <option value="787">Permaswage China</option>
+                        <option value="786">Permaswage France</option>
+                        <option value="719">Precision Tool Group - Hi-Life Tools</option>
+                        <option value="698">Precision Tool Group - Kadimi</option>
+                        <option value="721">Precision Tool Group - Reed</option>
+                        <option value="722">Precision Tool Group - SPS China</option>
+                        <option value="665">Santa Ana</option>
+                        <option value="666">Shur-Lok Company</option>
+                        <option value="673">Shur-Lok International</option>
+                        <option value="702">SPS International Trading Co</option>
+                        <option value="659">SPS Unbrako Japan</option>
+                        <option value="669">T.J. Brooks</option>
+                        </optgroup>
+                        <optgroup label="PCC Aerostructures">
+                        <option value="674">AF Aerospace</option>
+                        <option value="790">Alloy Proc</option>
+                        <option value="660">Avibank Manufacturing</option>
+                        <option value="661">Avibank Services LLC</option>
+                        <option value="758">Brittain</option>
+                        <option value="745">CANMEX</option>
+                        <option value="734">Centra Industries Inc.</option>
+                        <option value="757">Compass NW</option>
+                        <option value="744">Dorval</option>
+                        <option value="778">Exacta Aerospace</option>
+                        <option value="760">Fortner</option>
+                        <option value="741">GCM North America</option>
+                        <option value="761">Helicomb</option>
+                        <option value="777">KaliStrut Aerospace </option>
+                        <option value="740">Klune KPC</option>
+                        <option value="738">Klune North Hollywood</option>
+                        <option value="739">Klune Spanish Fork</option>
+                        <option value="672">Kun Shan Aerostructures</option>
+                        <option value="743">McSwain</option>
+                        <option value="746">Mexico Queretaro</option>
+                        <option value="752">Plasma Coating</option>
+                        <option value="711">Primus - Accra</option>
+                        <option value="712">Primus - Auburn</option>
+                        <option value="713">Primus - Bangkok</option>
+                        <option value="714">Primus - Farnborough</option>
+                        <option value="715">Primus - Suzhou</option>
+                        <option value="716">Primus - University Swaging</option>
+                        <option value="717">Primus - Waldens</option>
+                        <option value="718">Primus Bellevue</option>
+                        <option value="750">ProCoat</option>
+                        <option value="742">Progressive</option>
+                        <option value="670">SPS Aerostructures - Annesley</option>
+                        <option value="671">SPS Aerostructures - Mansfield</option>
+                        <option value="756">Stratoflight</option>
+                        <option value="751">SW United</option>
+                        <option value="753">SW United Canada</option>
+                        <option value="754">SW United Mexico</option>
+                        <option value="755">Sync Aero</option>
+                        <option value="759">Weaver</option>
+                        </optgroup>
+                        <optgroup label="SMC">
+                        <option value="703">AlloyWorks</option>
+                        <option value="633">Beachwood</option>
+                        <option value="638">Caledonian</option>
+                        <option value="637">Greenville</option>
+                        <option value="636">Hereford</option>
+                        <option value="634">Huntington</option>
+                        <option value="635">New Hartford</option>
+                        <option value="726">Newton</option>
+                        <option value="784">Overall Forge</option>
+                        <option value="641">Singapore</option>
+                        <option value="791">SOS Metals</option>
+                        <option value="640">WASA</option>
+                        <option value="639">Wire Group</option>
+                        </optgroup>
+                        <optgroup label="Structurals">
+                        <option value="723">ASC</option>
+                        <option value="690">Conson City</option>
+                        <option value="629">DDC</option>
+                        <option value="630">Division HQ</option>
+                        <option value="692">Groton</option>
+                        <option value="695">GSC</option>
+                        <option value="781">LPC Combined (Do not use)</option>
+                        <option value="708">LPC-Steel</option>
+                        <option value="780">LPC-Ti</option>
+                        <option value="631">PCC France</option>
+                        <option value="691">San Leandro</option>
+                        <option value="632">Schlosser</option>
+                        <option value="689">SSBO</option>
+                        <option value="694">Tilton/Franklin</option>
+                        </optgroup>
+                        <optgroup label="Timet">
+                        <option value="764">Division HQ</option>
+                        <option value="763">Timet Elim</option>
+                        <option value="766">Timet Europe</option>
+                        <option value="767">Timet Henderson</option>
+                        <option value="774">Timet Loterios</option>
+                        <option value="769">Timet Morgantown</option>
+                        <option value="771">Timet NA Service Centers</option>
+                        <option value="762">Timet North America</option>
+                        <option value="772">Timet PFP</option>
+                        <option value="775">Timet Savoie</option>
+                        <option value="770">Timet Toronto</option>
+                        <option value="773">Timet UK</option>
+                        <option value="783">Waunarlwydd</option>
+                        <option value="782">Witton</option>
+                        </optgroup>
+                        <optgroup label="Wyman">
+                        <option value="735">Aerocraft Heat Treating</option>
+                        <option value="697">Arcturus</option>
+                        <option value="652">Brighton</option>
+                        <option value="765">BTM</option>
+                        <option value="779">BTM China</option>
+                        <option value="696">Conlton Forge Works</option>
+                        <option value="729">Chengde</option>
+                        <option value="653">Cleveland</option>
+                        <option value="736">Dickson Testing Company</option>
+                        <option value="655">Division Office</option>
+                        <option value="650">Grafton</option>
+                        <option value="728">Hackney-Ladish</option>
+                        <option value="642">Houston - Energy</option>
+                        <option value="725">Houston - Turbine</option>
+                        <option value="704">KLAD</option>
+                        <option value="644">Lincoln</option>
+                        <option value="643">Livingston</option>
+                        <option value="789">McWilliams</option>
+                        <option value="649">Monterrey</option>
+                        <option value="648">Plzen</option>
+                        <option value="654">Princeton</option>
+                        <option value="731">RathGibson - Greenville</option>
+                        <option value="730">RathGibson - Janesville</option>
+                        <option value="732">RathGibson - North Branch</option>
+                        <option value="705">Rollmet</option>
+                        <option value="788">Summit</option>
+                        <option value="749">Texas Honing/THI</option>
+                        <option value="710">TruForm</option>
+                        <option value="707">Tyseley</option>
+                        <option value="776">Wilkes-Barre</option>
+                        <option value="651">Worcester</option>
+                        <option value="706">Wyman-Gordon PA (Mountaintop)</option>
+                        </optgroup>
+                      </select>
+        </td>
+      </tr>
+      <tr>
+        <td align="right">Originator: </td>
+        <td><input type="text" name="param_originator_s_n_125" value=""></td>
+      </tr>
+      <tr>
+        <td align="right">Project Title: </td>
+        <td><input type="text" name="param_project~title_s_n_255" value=""></td>
+      </tr>
+      <tr>
+        <td align="right">Current Approver: </td>
+        <td><input type="text" name="param_current~approver_s_n_125" value=""></td>
+        <tr>
+        <td align="right">Current Status: </td>
+        <td><select name="param_current~status_s_n_60">
+            <option value="">ANY</option>
+           <option value="OPEN">OPEN</option>
+                    <option value="IN PROCESS">IN PROCESS</option>
+                    <option value="APPROVED">APPROVED</option>
+                    <option value="RECALLED">RECALLED</option>
+                    <option value="REJECTED">REJECTED</option>
+                    <option value="TERMINATED">TERMINATED</option>
+          </select></td>
+      </tr>
+      <tr>
+        <td colspan="2">Created Between: </td>
+      </tr>
+      <tr>  
+        <td colspan="2"><input type="text" id="date_from" size="10" name="param_created~from_dte_n_10" value="">
+          and
+          <input type="text" id="date_to" size="10" name="param_created~to_dte_n_10" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="2">Last modified Between: </td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="text" id="modified_from" size="10" name="param_modified~from_dte_n_10" value="">
+          and
+          <input type="text" id="modified_to" size="10" name="param_modified~to_dte_n_10" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="2" >Amount (in USD) between: </td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="text" size="10" name="param_amount~from_m_n_20" value="">
+          and
+          <input type="text" size="10" name="param_amount~to_m_n_20" value=""></td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" name="searchform" value="Search"></td>
+      </tr>
+    </tbody>
+</table>
+                        
+                        
+                    </form>
+                </div>
+                
+                <!-- first list when you land on the page -->
+                <div id="conList"> 
+                    <h3>CON Dashboard</h3>
+                    <!-- content inserted here from econ.js -->
+                    <ul id="currentCONS">
+                        <script id="current-cons" type="text/x-handlebars-template">
+                            <li class="paddingFive" style="background-color: {{taskColor}}"> 
+                                <a href="{{conDetailsUrl}}">{{conTitle}}</a><br/>
+                                <span class="small">ID: {{conID}} &nbsp; &nbsp; Status: {{conStatus}}</span>
+                                <hr>
+                            </li>
+                        </script>               
+                    </ul>
+                </div>
+                
+                <!-- a CON id was passed in so, get the details -->
+                <div id="conDetails">
+                    <script id="con-details" type="text/x-display-template">
+                        
+                        <div id="conDetailsActionButtons" class="center paddingFive" style="margin-top:5px;">
+                            <a id="approveCONButton" class="pccBlue rounded-corners paddingFive" href="javascript:Econ.displayApproveCON('{{conID}}')">Approve</a> 
+                            <a id="rejectCONButton"  class="pccBlue rounded-corners paddingFive" href="javascript:Econ.displayRejectCON('{{conID}}')">Reject</a> 
+                            <a id="forwardCONButton" class="pccBlue rounded-corners paddingFive" href="javascript:Econ.displayForwardCON('{{conID}}')">Forward</a>
+                            <a id="recallCONButton" class="pccBlue rounded-corners paddingFive" href="javascript:Econ.displayRecallCON('{{conID}}')">Recall</a>
+                        </div>
+                        
+                        <!-- if this task is rejected, show the terminage button                        -->
+                        <div id="conTerminateDiv" class="center paddingFive" style="margin-top:5px;">
+                            <a id="terminateCONButton" class="pccBlue rounded-corners paddingFive" href="javascript:Econ.displayTerminateCON('{{conID}}')">Terminate</a>    
+                        </div>
+                        
+                        <!-- aligned right grey call out box -->
+                        <h3>{{conDisplayName}}</h3>
+                        <dl id="conDetailsPullout" class="rounded-corners">
+                            <dt>Plant</dt>
+                             <dd>{{conPlant}}</dd>
+                            <dt>Division</dt>
+                            <dd>{{conDivision}}</dd>
+                            <dt>Status</dt>
+                            <dd>{{conStatus}}</dd>   
+                        </dl>
+                        
+                        <dl id="conDetailsMainDL">
+                            <dt>Project Title</dt>
+                            <dd>{{conProjectTitle}}</dd>
+                            <dt>Originator</dt>
+                            <dd>{{conOriginator}}</dd>
+                            <dt>Type</dt>
+                            <dd>{{conType}}</dd>
+                            <dt>Comments</dt>
+                            <dd>{{conComments}}</dd>
+                            <dt>Owner</dt>
+                             <dd>{{conOwner}}</dd>
+                            <dt>Current Approver Name</dt>
+                            <dd>{{conCurrentApproverName}}</dd>
+                            <dt>Amount</dt>
+                            <dd>{{conAmount}}({{conCurrency}})</dd>
+                            <dt>Purpose</dt>
+                            <dd>{{conPurpose}}</dd>
+                           <dt>Second Originator</dt>
+                            <dd>{{conSecondOriginator}}</dd>
+                            <dt>IT Policy Number</dt>
+                            <dd>{{conITPolicyNumber}}</dd>
+                           <dt>Rush?</dt>
+                            <dd>{{conRush}}</dd>
+                            <dt>Rush Reason</dt>
+                            <dd>{{conRushReason}}</dd>
+                            <dt>NPV</dt>
+                            <dd>{{conNPV}}</dd>
+                           <dt>IRR</dt>
+                            <dd>{{conIRR}}</dd>
+                           <dt>Is Budgeted?</dt>
+                            <dd>{{conIsBudgeted}}</dd>
+                           <dt>Exchange Rate</dt>
+                            <dd>{{conExchangeRate}}</dd>
+                           <dt>Equated USD Amount</dt>
+                            <dd>{{conEquatedUSDAmount}}</dd>
+                           <dt>For Consulting?</dt>
+                            <dd>{{conForConsulting}}</dd>
+                           <dt>Is Import/Export?</dt>
+                            <dd>{{conIsImportExport}}</dd>
+                           <dt>Is Lease?</dt>
+                            <dd>{{conIsLease}}</dd>
+                        </dl>                        
+                    </script>
+                </div> <!-- end con details -->
+                
+                <br clear="all"/>
+                
+                <!-- con attachments; these are set up seperatly so the templates can be repeated -->
+                <div id="conAttachments">
+                    <h4></h4>
+                    <!-- opening arrow goes here from econ.js -->
+                    <div id="conAttachmentsList">
+                        <script id="con-attachments" type="text/x-display-template">
+                            {{conAttachmentCreationDate}}: <a href="javascript:Econ.getAttachment('{{conAttachmentURL}}')">{{conAttachmentFilename}}</a><br/>
+                            Uploaded by: {{conAttachmentUploadBy}} <br/>
+                            Modified: {{conAttachmentModifyDate}} <br/>
+                            <hr>
+                        </script>
+                    </div>
+                </div><!-- end con attachments -->
+                
+                <br clear="all"/>
+               
+                <!-- con approvers; these are set up seperatly so the templates can be repeated -->
+                <div id="conApprovers">
+                    <h4></h4>
+                    <div id="conApproversList">
+                        <script id="con-approvers" type="text/x-display-template">
+                            Approver: {{conApproversName}}<br/>
+                            Timestamp: {{conApproversTimestamp}}<br/>
+                            Comments: {{conApproversComments}}<br/>
+                            Version: {{conApproversVersion}}<br/>
+                            Level: {{conApproversLevelName}}<br/>
+                            Disposition: {{conApproversStatus}}<br/>
+                            <!--
+                            Created: {{conApproversCreationDate}}<br/>
+                            Modified: {{conApproversModifyDate}}<br/>
+                            Close Date: {{conApproversCloseDate}}<br/>
+                            Delegated: {{conApproversDelegatedTo}}<br/>
+                            Closed: {{conApproversIsClosed}}<br/>
+                            PRP ID: {{conApproversPRPID}}<br/>
+                            Priority: {{conApproversPriority}}<br/>
+                            Approver: Priority: {{conApproversApproverPriority}}<br/>
+                            Rush? {{conApproversRush}}<br/>
+                            Rush Reason: {{conApproversRushReason}}<br/>
+                            Last Reminder: {{conApproversLastReminderDate}}<br/>
+                            Is Internal? {{conApproversIsInternal}}<br/>
+                            Group: {{conApproversApproverGroup}}<br/>
+                            History: {{conApproversCommentHashHistory}}<br/>
+                            -->
+                            <hr>
+                        </script>
+                    </div>
+                </div><!-- end con approvers -->
+                
+                <!-- approve CON form -->
+                <div id="conApproveForm">
+                    <h4>Approve CON</h4>
+                    <p>Please add comments to the form below.</p>
+                    <script id="con-approve-template" type="text/x-display-template">
+                        <form>
+                            <textarea cols=45 rows=10 name="comments" id="comments"></textarea>
+                            <input type="hidden" value="{{conID}}" name="con_id" id="con_id"/><br/>
+                            <a  class="center" href="#" onclick="Econ.approveCON($('#con_id').val(), $('textarea#comments').val())" id="approveLink"><div id="approveButton" class="pccBlue rounded-corners paddingFive"> Send Approval with Comments</div></a>
+                        </form>
+                    </script>
+                </div>
+                
+                <!-- reject CON form -->
+                <div id="conRejectForm">
+                    <h4>Reject CON</h4>
+                    <p>Please add comments to the form below.</p>
+                    <script id="con-reject-template" type="text/x-display-template">
+                        <form>
+                            <textarea cols=45 rows=10 name="comments" id="comments"></textarea>
+                            <input type="hidden" value="{{conID}}" name="con_id" id="con_id"/><br/>
+                            <a class="center" href="#" onclick="Econ.rejectCON($('#con_id').val(), $('textarea#comments').val())" id="rejectLink"><div id="rejectButton" class="pccBlue rounded-corners paddingFive"> Send Rejection with Comments</div></a>
+                        </form>
+                    </script>
+                </div>
+
+                <!-- forward CON form -->
+                <div id="conForwardForm">
+                    <h4>Forward CON</h4>
+                    <p>Please enter the email address of the person to forward too. If more than one email address, please separate by <strong>commas</strong>. Please note that emails must be a valid PCC domain address.</p>
+                    <script id="con-forward-template" type="text/x-display-template">
+                        <form>
+                            Emails: <input type="text" name="email" id="email"/><br/><br/>
+                            Comments:<br/>
+                            <textarea cols=45 rows=10 name="comments" id="comments"></textarea><br/>
+                            <input type="hidden" value="{{conID}}" name="con_id" id="con_id"/><br/>
+                            <a class="center"  href="#" onclick="Econ.forwardCON($('#con_id').val(), $('textarea#comments').val(), $('#email').val())" id="forwardLink"><div id="forwardButton" class="pccBlue rounded-corners paddingFive"> Forward CON</div></a>
+                        </form>
+                    </script>
+                </div>
+
+                <div id="conRecallForm">
+                    <h4>Recall CON</h4>
+                    <p>Please add comments to the form below.</p>
+                    <script id="con-recall-template" type="text/x-display-template">
+                        <form>
+                            <textarea cols=45 rows=10 name="comments" id="comments"></textarea>
+                            <input type="hidden" value="{{conID}}" name="con_id" id="con_id"/><br/>
+                            <a  class="center" href="#" onclick="Econ.recallCON($('#con_id').val(), $('textarea#comments').val())" id="recallLink"><div id="recallButton" class="pccBlue rounded-corners paddingFive"> Send Recall with Comments</div></a>
+                        </form>
+                    </script>
+                </div>
+
+                <!-- terminate CON form :: for after the rejection, you can terminate this. -->
+                <div id="conTerminateForm">
+                    <h4>Terminate CON</h4>
+                    <p>Please enter your comments for this termination.</p>
+                    <script id="con-terminate-template" type="text/x-display-template">
+                        <form>
+                            Comments:<br/>
+                            <textarea cols=45 rows=10 name="comments" id="comments"></textarea><br/>
+                            <input type="hidden" value="{{conID}}" name="con_id" id="con_id"/><br/>
+                            <a class="center"  href="#" onclick="Econ.terminateCON($('#con_id').val(), $('textarea#comments').val(), $('#email').val())" id="terminateLink"><div id="terminateButton" class="pccBlue rounded-corners paddingFive"> Terminate CON</div></a>
+                        </form>
+                    </script>
+                </div>
+
+                <!-- for the attachment pop up; the iframe will be loaded from Econ.getAttachment() -->        
+                <div id="attachmentPopUpDiv">
+                    <a href="javascript:Econ.closeAttachmentPopUpDiv()"><img src='close_icon.png' width=32 height=32 id='overlayCloseButton' /></a>
+                    <iframe id="attachmentPopUpFrame"></iframe>
+                </div>
+                
+            </div><!-- end centered -->
+        </div><!-- end container -->
+        
+        <!-- waiting for something to happen so, show this -->
+        <div id="spinner" class="pccBlue rounded-corners">
+            <img src="spinner.gif" width="80" height="80">
+            <p id="spinnerMsg">Please Wait...</p>
+        </div>
+        
+
+       <script type="text/javascript" src="jquery.js"></script>
+       <script type="text/javascript" src="index.js"></script>
+       <script src="websql-store-init.js"></script>
+       <script src="econ.js"></script>
+       
+       <!--<script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="js/websql-store-init.js"></script>
+        <script src="js/econ.js"></script>-->
+
+        <script type="text/javascript">
+            // did we get an con_id passed? Else, init and get  a list for this user
+            var conID = app.urlParam()["con_id"];
+            if (typeof conID != 'undefined') {
+                // pass in the whole key/value string because they come from the database and might change
+                var wholeQueryString = window.location.search;
+                Econ.getECONDetails(wholeQueryString);
+            } else {
+                Econ.init(); // init -> start this off by checking the login to see if they have a session
+            }
+        </script>
+    </body>
+</html>
